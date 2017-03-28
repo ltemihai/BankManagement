@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4C04E4CF-4186-4D39-80EF-9C24D3BC32A9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BankManagementApplication</RootNamespace>
+    <AssemblyName>BankManagementApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bankdbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bankdbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bankdbDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bankdbDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\AccountGateway.cs" />
+    <Compile Include="DataAccessLayer\ClientGateway.cs" />
+    <Compile Include="DataAccessLayer\GenericDataGateway.cs" />
+    <Compile Include="DataAccessLayer\GetDataGateway.cs" />
+    <Compile Include="DataAccessLayer\LoginGateway.cs" />
+    <Compile Include="DataAccessLayer\TransactionGateway.cs" />
+    <Compile Include="PresentationLayer\AccountForms\AddAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\AccountForms\AddAccountForm.Designer.cs">
+      <DependentUpon>AddAccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\ClientForms\DeleteClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\ClientForms\DeleteClientForm.Designer.cs">
+      <DependentUpon>DeleteClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\AccountForms\FindAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\AccountForms\FindAccountForm.Designer.cs">
+      <DependentUpon>FindAccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\ClientForms\FindClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\ClientForms\FindClientForm.Designer.cs">
+      <DependentUpon>FindClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\ClientForms\InsertClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\ClientForms\InsertClientForm.Designer.cs">
+      <DependentUpon>InsertClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\AccountForms\RemoveAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\AccountForms\RemoveAccountForm.Designer.cs">
+      <DependentUpon>RemoveAccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\AccountForms\UpdateAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\AccountForms\UpdateAccountForm.Designer.cs">
+      <DependentUpon>UpdateAccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\ClientForms\UpdateClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\ClientForms\UpdateClientForm.Designer.cs">
+      <DependentUpon>UpdateClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\TransactionForms\TransferMoneyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\TransactionForms\TransferMoneyForm.Designer.cs">
+      <DependentUpon>TransferMoneyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\Client.cs" />
+    <Compile Include="Model\Entity.cs" />
+    <Compile Include="Model\LoginUser.cs" />
+    <Compile Include="Model\Transaction.cs" />
+    <Compile Include="PresentationLayer\AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\FrontForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\FrontForm.Designer.cs">
+      <DependentUpon>FrontForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BusinessLayer\Repositories\Repository.cs" />
+    <EmbeddedResource Include="PresentationLayer\AccountForms\AddAccountForm.resx">
+      <DependentUpon>AddAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\AccountForms\FindAccountForm.resx">
+      <DependentUpon>FindAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\AccountForms\UpdateAccountForm.resx">
+      <DependentUpon>UpdateAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\ClientForms\DeleteClientForm.resx">
+      <DependentUpon>DeleteClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\ClientForms\FindClientForm.resx">
+      <DependentUpon>FindClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\FrontForm.resx">
+      <DependentUpon>FrontForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\ClientForms\InsertClientForm.resx">
+      <DependentUpon>InsertClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\AccountForms\RemoveAccountForm.resx">
+      <DependentUpon>RemoveAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\ClientForms\UpdateClientForm.resx">
+      <DependentUpon>UpdateClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\TransactionForms\TransferMoneyForm.resx">
+      <DependentUpon>TransferMoneyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="bankdbDataSet.xsc">
+      <DependentUpon>bankdbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bankdbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bankdbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bankdbDataSet.xss">
+      <DependentUpon>bankdbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bankdbDataSet1.xsc">
+      <DependentUpon>bankdbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="bankdbDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bankdbDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bankdbDataSet1.xss">
+      <DependentUpon>bankdbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\BusinessLayer.Model.Client.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

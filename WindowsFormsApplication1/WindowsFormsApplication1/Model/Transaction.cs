@@ -4,21 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApplication1.Model
+namespace BusinessLayer.Model
 {
-    class Transaction
+    public class Transaction : Entity
     {
         private string transactionId;
         private float amount;
         private string date;
         private string accountId;
+        private string toTransferId;
 
-        public Transaction(string transactionId, float amount, string date, string accountId)
+        public Transaction(string transactionId, float amount, string date, string accountId, string toTransferId)
         {
             TransactionId = transactionId;
             Amount = amount;
             Date = date;
             AccountId = accountId;
+            ToTransferId = toTransferId;
+        }
+
+        public Transaction(float amount, string date, string accountId, string toTransferId)
+        {
+            Amount = amount;
+            Date = date;
+            AccountId = accountId;
+            ToTransferId = toTransferId;
         }
 
         public string TransactionId
@@ -70,6 +80,19 @@ namespace WindowsFormsApplication1.Model
             set
             {
                 accountId = value;
+            }
+        }
+
+        public string ToTransferId
+        {
+            get
+            {
+                return toTransferId;
+            }
+
+            set
+            {
+                toTransferId = value;
             }
         }
     }

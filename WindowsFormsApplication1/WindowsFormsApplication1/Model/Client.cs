@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bank.Model
+namespace BusinessLayer.Model
 {
-    class Client
+    public class Client : Entity
     {
         private string cnp;
         private string name;
@@ -23,6 +23,11 @@ namespace Bank.Model
             Type = type;
             Address = address;
             CreationDate = creationDate;
+        }
+
+        public Client(string cnp)
+        {
+            Cnp = cnp;
         }
 
         public string Cnp

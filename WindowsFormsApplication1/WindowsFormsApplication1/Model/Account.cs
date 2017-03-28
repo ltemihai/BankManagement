@@ -4,19 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bank.Model
+namespace BusinessLayer.Model
 {
-    class Account
+    public class Account : Entity
     {
         private string idAccount;
         private float balance;
         private string idClient;
+        private List<Transaction> transactions;
 
         public Account(string idAccount, float balance, string idClient)
         {
             IdAccount = idAccount;
             Balance = balance;
             IdClient = idClient;
+        }
+
+        public Account(string idAccount)
+        {
+            IdAccount = idAccount;
         }
 
         public string IdAccount
@@ -55,6 +61,19 @@ namespace Bank.Model
             set
             {
                 idClient = value;
+            }
+        }
+
+        public List<Transaction> Transactions
+        {
+            get
+            {
+                return transactions;
+            }
+
+            set
+            {
+                transactions = value;
             }
         }
     }
